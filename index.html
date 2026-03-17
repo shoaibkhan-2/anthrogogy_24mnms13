@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Map That Was Never Given — Mohd Shoaib</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: #faf8f3;
+  color: #2c2415;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* ── hand-drawn border effect ── */
+body::after {
+  content: '';
+  position: fixed; inset: 12px;
+  border: 2px dashed rgba(139,100,60,0.15);
+  pointer-events: none; z-index: 9999;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────── NAV ─────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: #fdf9f0;
+  border-bottom: 2px solid #e8dfc8;
+  padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.nav-title {
+  font-family: 'Caveat', cursive;
+  font-size: 22px; font-weight: 700;
+  color: #8b3a1a;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex; gap: 28px; list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #7a6a52; text-decoration: none;
+  transition: color 0.2s;
+  border-bottom: 1px dashed transparent;
+}
+.nav-links a:hover { color: #8b3a1a; border-bottom-color: #8b3a1a; }
+
+/* ─────────────────────────────── HERO ─────────────────────────────── */
+#hero {
+  background: #fdf9f0;
+  padding: 80px 40px 60px;
+  text-align: center;
+  border-bottom: 2px solid #e8dfc8;
+  position: relative;
+  overflow: hidden;
+}
+
+/* lined paper effect */
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 27px, #e8dfc8 28px
+  );
+  opacity: 0.25;
+}
+
+.hero-inner { position: relative; z-index: 1; }
+
+.notebook-label {
+  display: inline-block;
+  background: #8b3a1a;
+  color: #fdf9f0;
+  font-family: 'Caveat', cursive;
+  font-size: 15px; font-weight: 600;
+  padding: 4px 18px;
+  border-radius: 2px;
+  margin-bottom: 28px;
+  transform: rotate(-1deg);
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(52px, 9vw, 96px);
+  font-weight: 700;
+  line-height: 1.0;
+  color: #2c2415;
+  margin-bottom: 10px;
+}
+
+h1 span {
+  color: #8b3a1a;
+  display: block;
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #7a6a52;
+  max-width: 540px;
+  margin: 20px auto 36px;
+  line-height: 1.65;
+}
+
+.hero-meta {
+  font-size: 13px;
+  color: #9a8a72;
+  line-height: 2.1;
+  letter-spacing: 0.03em;
+}
+
+/* ─────────────────────────────── TAPE STRIP ─────────────────────────────── */
+.tape {
+  width: 100%; height: 28px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(200,160,80,0.12) 0px, rgba(200,160,80,0.12) 10px,
+    rgba(200,160,80,0.05) 10px, rgba(200,160,80,0.05) 20px
+  );
+  border-top: 1px solid rgba(200,160,80,0.25);
+  border-bottom: 1px solid rgba(200,160,80,0.25);
+}
+
+/* ─────────────────────────────── SECTIONS ─────────────────────────────── */
+.section-white { background: #ffffff; }
+.section-cream { background: #faf8f3; }
+.section-warm  { background: #f5efe4; }
+.section-dark  { background: #2c2415; color: #f0e9da; }
+.section-rust  { background: #8b3a1a; color: #fdf0e6; }
+
+.container {
+  max-width: 760px; margin: 0 auto;
+  padding: 80px 36px;
+}
+
+.container-wide {
+  max-width: 1060px; margin: 0 auto;
+  padding: 80px 36px;
+}
+
+/* ─────────────────────────────── SECTION LABEL ─────────────────────────────── */
+.sec-label {
+  font-family: 'Caveat', cursive;
+  font-size: 16px; font-weight: 600;
+  color: #8b3a1a;
+  display: block; margin-bottom: 14px;
+  letter-spacing: 0.03em;
+}
+
+.section-dark .sec-label  { color: #e8b86d; }
+.section-rust .sec-label  { color: #fdf0e6; opacity: 0.7; }
+
+h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(30px, 4.5vw, 52px);
+  font-weight: 600; line-height: 1.1;
+  margin-bottom: 32px;
+  color: inherit;
+}
+
+h3 {
+  font-family: 'Lora', serif;
+  font-size: 22px; font-weight: 600;
+  margin: 44px 0 14px;
+  color: #8b3a1a;
+}
+
+.section-dark h3  { color: #e8b86d; }
+.section-rust h3  { color: #fdf0e6; }
+
+p { margin-bottom: 20px; }
+p:last-child { margin-bottom: 0; }
+
+/* ─────────────────────────────── HANDWRITTEN CALLOUT ─────────────────────────────── */
+.hand-note {
+  font-family: 'Caveat', cursive;
+  font-size: 22px; font-weight: 600;
+  color: #8b3a1a;
+  background: #fff9e6;
+  border: 2px solid #e8b86d;
+  border-radius: 4px;
+  padding: 22px 28px;
+  margin: 36px 0;
+  line-height: 1.45;
+  position: relative;
+  transform: rotate(-0.5deg);
+  box-shadow: 3px 3px 0 rgba(139,58,26,0.1);
+}
+
+.hand-note::before {
+  content: '"';
+  font-size: 60px; line-height: 0;
+  position: absolute; top: 28px; left: 16px;
+  color: #e8b86d; opacity: 0.4;
+  font-family: Georgia, serif;
+}
+
+.section-dark .hand-note {
+  background: rgba(255,255,255,0.05);
+  border-color: #e8b86d;
+  color: #f0e9da;
+}
+
+/* ─────────────────────────────── UNDERLINE DOODLE ─────────────────────────────── */
+.doodle-underline {
+  display: inline;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='8'%3E%3Cpath d='M0 5 Q 25 2 50 5 T 100 5 T 150 5 T 200 5' fill='none' stroke='%238b3a1a' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 100px 8px;
+  padding-bottom: 4px;
+}
+
+/* ─────────────────────────────── THREE INCIDENTS ─────────────────────────────── */
+.incidents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 24px;
+  margin: 48px 0;
+}
+
+.incident-card {
+  background: #ffffff;
+  border: 2px solid #e8dfc8;
+  border-radius: 6px;
+  padding: 32px 28px;
+  position: relative;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.incident-card:hover {
+  transform: translateY(-4px) rotate(0.3deg);
+  box-shadow: 6px 6px 0 rgba(139,58,26,0.12);
+}
+
+.card-num {
+  font-family: 'Caveat', cursive;
+  font-size: 56px; font-weight: 700;
+  color: #e8dfc8;
+  position: absolute; top: 12px; right: 20px;
+  line-height: 1;
+}
+
+.card-tag {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #8b3a1a; margin-bottom: 10px; display: block;
+}
+
+.card-title {
+  font-family: 'Lora', serif;
+  font-size: 20px; font-weight: 600;
+  margin-bottom: 12px; line-height: 1.25;
+  color: #2c2415;
+}
+
+.card-body { font-size: 15px; color: #7a6a52; line-height: 1.7; }
+
+/* ─────────────────────────────── INCIDENT DETAIL ─────────────────────────────── */
+.incident-detail {
+  border-left: 4px solid #8b3a1a;
+  padding: 0 0 0 32px;
+  margin: 56px 0;
+}
+
+.section-dark .incident-detail { border-color: #e8b86d; }
+
+/* ─────────────────────────────── COMPARE TABLE ─────────────────────────────── */
+.compare-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  border: 2px solid #e8dfc8;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 48px 0;
+}
+
+.compare-col { padding: 36px 28px; }
+.col-ped { background: #fff5f2; }
+.col-ant { background: #f2fff8; }
+
+.col-ped h3 { color: #8b3a1a; margin-top: 0; }
+.col-ant h3 { color: #2a6e4e; margin-top: 0; }
+
+.compare-label {
+  font-family: 'Caveat', cursive;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  display: block; margin-bottom: 14px;
+}
+
+.col-ped .compare-label { color: #8b3a1a; }
+.col-ant .compare-label { color: #2a6e4e; }
+
+.compare-row {
+  display: flex; gap: 10px; align-items: flex-start;
+  margin-bottom: 14px; font-size: 15px; color: #5a4a36;
+  line-height: 1.6;
+}
+
+.compare-row::before {
+  content: '→'; flex-shrink: 0;
+  color: #c0a070; margin-top: 1px;
+}
+.col-ant .compare-row::before { color: #4caf7d; }
+
+/* ─────────────────────────────── YOUTUBE SECTION ─────────────────────────────── */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin: 48px 0;
+}
+
+.video-card {
+  background: #ffffff;
+  border: 2px solid #e8dfc8;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139,58,26,0.12);
+}
+
+.video-frame-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  background: #1a1410;
+  overflow: hidden;
+}
+
+.video-frame-wrap iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* Fallback thumbnail with play button */
+.video-thumb {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.play-btn {
+  width: 68px; height: 68px;
+  background: #ff0000;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+  transition: transform 0.2s, background 0.2s;
+}
+.video-thumb:hover .play-btn {
+  transform: scale(1.1);
+  background: #cc0000;
+}
+
+.play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
+
+.video-label {
+  font-family: 'Caveat', cursive;
+  font-size: 17px; font-weight: 600;
+  color: #f0e9da; text-align: center;
+  padding: 0 20px;
+}
+
+.video-info { padding: 20px 22px 24px; }
+
+.video-title {
+  font-family: 'Lora', serif;
+  font-size: 17px; font-weight: 600;
+  color: #2c2415; margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.video-desc { font-size: 14px; color: #7a6a52; line-height: 1.6; }
+
+.video-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.tag-ped { background: #fff0ec; color: #8b3a1a; }
+.tag-ant { background: #ecfff4; color: #2a6e4e; }
+.tag-both { background: #fff9e6; color: #7a5a00; }
+
+/* ─────────────────────────────── STORY ─────────────────────────────── */
+.story-header {
+  padding: 72px 36px 0;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.story-num {
+  font-family: 'Caveat', cursive;
+  font-size: 100px; font-weight: 700;
+  line-height: 0.85;
+  color: rgba(139,58,26,0.08);
+  display: block;
+  margin-bottom: 4px;
+}
+.section-dark .story-num { color: rgba(232,184,109,0.1); }
+
+.story-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 600; line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+.story-byline {
+  font-size: 16px; font-style: italic;
+  color: #9a8a72; margin-bottom: 0;
+}
+.section-dark .story-byline { color: #a09080; }
+
+.story-body {
+  max-width: 760px; margin: 0 auto;
+  padding: 48px 36px 80px;
+}
+
+.story-opener {
+  font-family: 'Lora', serif;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 28px;
+  color: #4a3828;
+}
+.section-dark .story-opener { color: #d0c8b8; }
+
+/* ─────────────────────────────── CLOSING ─────────────────────────────── */
+#closing {
+  background: #2c2415;
+  color: #f0e9da;
+  text-align: center;
+  padding: 100px 40px;
+  position: relative;
+}
+
+.closing-line {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  color: #f0e9da;
+}
+
+.closing-line em { color: #e8b86d; font-style: italic; }
+
+.closing-sig {
+  font-size: 14px;
+  color: #7a6a52;
+  letter-spacing: 0.05em;
+  line-height: 2;
+}
+
+/* ─────────────────────────────── DIVIDER ─────────────────────────────── */
+.hr { border: none; border-top: 2px dashed #e8dfc8; margin: 56px 0; }
+.section-dark .hr { border-color: rgba(255,255,255,0.1); }
+
+/* ─────────────────────────────── SCROLL REVEAL ─────────────────────────────── */
+.reveal { opacity:0; transform:translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.up { opacity:1; transform:translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.22s; }
+.d3 { transition-delay: 0.34s; }
+
+/* ─────────────────────────────── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .compare-wrap { grid-template-columns: 1fr; }
+  .incidents-grid { grid-template-columns: 1fr; }
+  .container, .container-wide { padding: 56px 22px; }
+  .story-header { padding: 56px 22px 0; }
+  .story-body { padding: 36px 22px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-title">✎ The Map That Was Never Given</a>
+  <ul class="nav-links">
+    <li><a href="#critique">Critique</a></li>
+    <li><a href="#incidents">Incidents</a></li>
+    <li><a href="#videos">Watch</a></li>
+    <li><a href="#compare">Ped vs Anth</a></li>
+    <li><a href="#story1">Stories</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section id="hero">
+  <div class="hero-inner">
+    <span class="notebook-label">✎ Anthrogogy · Internal-1 · 2026</span>
+    <h1>The Map<span>That Was Never Given</span></h1>
+    <p class="hero-subtitle">Three real incidents. Two stories. One honest question about how we were all taught — and what that cost us.</p>
+    <p class="hero-meta">
+      Mohd Shoaib &nbsp;·&nbsp; 24MNMS13<br>
+      M.Sc. Neural and Cognitive Sciences, 3rd Semester<br>
+      University of Hyderabad &nbsp;·&nbsp; Prof. Shree Deepa
+    </p>
+  </div>
+</section>
+<div class="tape"></div>
+
+<!-- ══════════════════════════ OPENING ══════════════════════════ -->
+<section class="section-cream" id="opening">
+  <div class="container">
+    <span class="sec-label reveal">✎ where this starts</span>
+    <h2 class="reveal">Why I made this<br><span class="doodle-underline">as a website</span></h2>
+    <p class="reveal">The assignment asked for a "creative presentation." It didn't say what kind. A PowerPoint would have been the safe choice. A video would have been the obvious one. But I kept thinking — a website lets the reader <em>choose how to move through it.</em> You can skip around. Go back. Read the stories before the theory. That felt like the right container for something that's trying to argue against being told what to do in a fixed order.</p>
+    <p class="reveal">So the website is the argument, and navigating through it is part of experiencing it.</p>
+
+    <div class="hand-note reveal">
+      "The most important thing school never asked me was: what do <em>you</em> think? Not what does the textbook say. What do you, sitting here right now, actually think?"
+    </div>
+
+    <p class="reveal">This project comes from a simple frustration: I went through twelve years of school and several more years of college, and in all that time the system was never really interested in my thinking. It was interested in my answers — whether they matched the key. That's pedagogy. This project is about noticing that, naming it, and asking what learning might look like if it were designed differently.</p>
+    <p class="reveal">Anthrogogy is that different design. And this course — the way Prof. Shree Deepa teaches it — is one of the few times I have actually experienced it from the inside.</p>
+  </div>
+</section>
+<div class="tape"></div>
+
+<!-- ══════════════════════════ WHAT IS PEDAGOGY ══════════════════════════ -->
+<section class="section-dark" id="critique">
+  <div class="container">
+    <span class="sec-label reveal">01 · the critique</span>
+    <h2 class="reveal">What Pedagogy<br>Actually Does to You</h2>
+
+    <p class="reveal">Pedagogy literally comes from Greek — <em>paidi</em> (child) + <em>ago</em> (to guide). It's the model where the teacher holds the knowledge, the child receives it, and success is measured by how accurately you give it back. Originally designed for children who had no existing knowledge base — which made sense in a certain context.</p>
+
+    <p class="reveal">The problem is that this model followed most of us from class one all the way through postgraduate education. Nobody switched it off when we became adults. Nobody said: okay, you're twenty-two now, you have twelve years of experience learning things, your own questions are valid now. The pedagogical relationship just continued, unchanged.</p>
+
+    <h3 class="reveal">Here is what it builds in you, slowly, over years</h3>
+
+    <div class="incident-detail reveal">
+      <p><strong style="color:#e8b86d">The habit of looking for the correct answer</strong> rather than interrogating the question. Every test trained you to find the right answer. Nobody trained you to ask whether the question was worth asking.</p>
+    </div>
+
+    <div class="incident-detail reveal">
+      <p><strong style="color:#e8b86d">The habit of self-censoring curiosity.</strong> You learn, quickly, which kinds of questions are acceptable and which go "outside the syllabus." After enough repetitions, you start doing this filtering yourself, before you even raise your hand.</p>
+    </div>
+
+    <div class="incident-detail reveal">
+      <p><strong style="color:#e8b86d">The habit of needing permission to know things.</strong> If it wasn't assigned, it wasn't real. If the teacher didn't bring it up, it didn't matter. Your own interest was not, by itself, a sufficient reason to pursue something.</p>
+    </div>
+
+    <div class="hand-note reveal">
+      "The most damaging thing pedagogy does is not what it teaches. It is what it makes you stop asking."
+    </div>
+
+    <p class="reveal">None of this is the fault of individual teachers. Most teachers are doing their best inside a system that was not designed around them either. The system was designed for efficiency — for moving prescribed content through a fixed schedule at scale. Individual learners were a secondary concern.</p>
+
+    <p class="reveal">Anthrogogy is the word for what that system was not. It starts from the opposite assumption: that the learner already has experience, has questions, has a way of making sense of things. And that the most powerful learning happens when that is engaged directly, not bypassed.</p>
+  </div>
+</section>
+<div class="tape"></div>
+
+<!-- ══════════════════════════ THREE INCIDENTS OVERVIEW ══════════════════════════ -->
+<section class="section-white" id="incidents">
+  <div class="container-wide">
+    <span class="sec-label reveal">02 · the evidence</span>
+    <h2 class="reveal">Three Incidents.<br>One Pattern.</h2>
+    <p class="reveal" style="max-width:580px;color:#7a6a52">All three happened in different places at different times. But each one is really the same story — a system that had its own logic, and a learner who didn't quite fit inside it.</p>
+
+    <div class="incidents-grid">
+      <div class="incident-card reveal d1">
+        <span class="card-num">I</span>
+        <span class="card-tag">Incident 01 — The Classroom</span>
+        <div class="card-title">The Question That Was Refused</div>
+        <p class="card-body">Class twelve. Physics. I asked why a formula worked — not how to use it. The teacher's answer: that's not in the syllabus. We move on. And we moved on.</p>
+      </div>
+      <div class="incident-card reveal d2">
+        <span class="card-num">II</span>
+        <span class="card-tag">Incident 02 — The Life Plan</span>
+        <div class="card-title">The Map That Was Already Drawn</div>
+        <p class="card-body">Study. Get a degree. Find stable work. Settle. The path was decided before I was consulted — and it didn't come with a "what comes after" section.</p>
+      </div>
+      <div class="incident-card reveal d3">
+        <span class="card-num">III</span>
+        <span class="card-tag">Incident 03 — This Assignment</span>
+        <div class="card-title">When the Wall Was a Paywall</div>
+        <p class="card-body">I tried to make a short film. 10+ AI tools. 10+ paywalls. One 10-second clip. And then, completely by accident, NotebookLM taught me more than the film ever would have.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ INCIDENT DETAIL 1 ══════════════════════════ -->
+<section class="section-cream" id="incident1">
+  <div class="container">
+    <span class="sec-label reveal">Incident I · deep dive</span>
+    <h2 class="reveal">The Physics Class<br>and the <span class="doodle-underline">Wrong Kind of Question</span></h2>
+
+    <h3 class="reveal">The Room First</h3>
+    <p class="reveal">Before describing what happened, I need to describe the room. Because the room was the argument. One point of authority at the front. Rows of receivers facing it. The teacher arrived and that was the signal that formal activity was beginning. The teacher spoke and we wrote. The teacher asked questions and we answered — the right answers, the ones already in the key. Anything else was noise.</p>
+
+    <h3 class="reveal">What Happened</h3>
+    <p class="reveal">We were in the middle of a physics lesson. A formula on the board, presented as established fact. The teacher explained the variables, worked through an example, and asked if anyone had questions.</p>
+    <p class="reveal">I raised my hand. I asked: <em>why does this formula work?</em> Not how to use it. What the reasoning underneath it was. What physical principle produced that specific relationship between those quantities.</p>
+    <p class="reveal">The teacher's response was not unkind. There was no irritation. It was simply: that's not something we need to know for the exam. We're going to move on now. And we did.</p>
+
+    <div class="hand-note reveal">
+      "The question that goes beneath the formula to ask why it is true is not a distraction from physics. It is the beginning of actually thinking like a physicist. But the classroom had no space for it."
+    </div>
+
+    <h3 class="reveal">What It Actually Taught Me</h3>
+    <p class="reveal">That moment, and the dozens like it over twelve years, taught me something that had nothing to do with the subject matter. It taught me which kinds of questions this space would accept. It taught me to ask, before raising my hand: <em>is this the kind of question this room wants?</em> That self-censoring did not serve my intellectual development. It served the schedule.</p>
+    <p class="reveal">This is what pedagogy does at its most structural: it doesn't just deliver content, it trains the learner's relationship to curiosity itself.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════ INCIDENT 2 ══════════════════════════ -->
+<section class="section-warm" id="incident2">
+  <div class="container">
+    <span class="sec-label reveal">Incident II · deep dive</span>
+    <h2 class="reveal">The Life Plan<br>Nobody Asked Me About</h2>
+
+    <h3 class="reveal">The Map Was There Before I Was</h3>
+    <p class="reveal">This incident doesn't have a single date or a single room. It accumulated over years. And it was so ambient that for a long time I didn't recognise it as anything at all — I just thought it was how life worked.</p>
+    <p class="reveal">The plan was clear. Study hard. Get into a good institution. Complete a degree. Find stable employment. Build a stable life. Nobody sat me down and formally stated this. It didn't need to be stated. It was in the air — in family conversations, in school prize-giving speeches, in the questions relatives asked at Eid, in the advice of older students, in the structure of every examination I sat. The entire social environment was pointing in the same direction. The direction felt like common sense.</p>
+
+    <div class="hand-note reveal">
+      "When every voice in your environment is pointing in the same direction, that direction begins to feel like common sense. You don't experience it as a constraint because the concept of choosing differently hasn't become available to you yet."
+    </div>
+
+    <h3 class="reveal">What Made It Pedagogical</h3>
+    <p class="reveal">The structure is identical to the classroom. The curriculum was set by someone other than me — by family, culture, social expectation. The destination was decided in advance. My role was to move toward it. My own questions about what I actually found meaningful were not part of the design. They were, if they arose, complications to manage.</p>
+    <p class="reveal">This is pedagogy at the scale of a whole life. Not one teacher, but an entire system — aligned, consistent, and completely uninterested in what I might have decided if someone had asked.</p>
+
+    <h3 class="reveal">When the Map Runs Out</h3>
+    <p class="reveal">I completed my degree. I followed the plan faithfully. And I found myself looking at what came next and realising that nobody had drawn that part. The map ended exactly where I was standing. And I had spent twenty-two years learning to follow a map, not to draw one.</p>
+    <p class="reveal">The disorientation I felt wasn't a personal failure. It was the entirely predictable result of an education that knew how to hand you directions but never taught you how to navigate without them.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════ INCIDENT 3 ══════════════════════════ -->
+<section class="section-white" id="incident3">
+  <div class="container">
+    <span class="sec-label reveal">Incident III · deep dive</span>
+    <h2 class="reveal">This Assignment,<br>and the <span class="doodle-underline">Accidental Discovery</span></h2>
+
+    <h3 class="reveal">The Ambition</h3>
+    <p class="reveal">I decided to make a short film. Not a slide deck, not a recorded lecture. A real short film — eight scenes, a visual metaphor of a printed map versus a hand-drawn map, narration, cinematic visuals. I wrote the script in one evening. I generated the narration audio using ElevenLabs (free tier). The audio existed. The concept existed. The script existed.</p>
+
+    <h3 class="reveal">Tool by Tool — What Actually Happened</h3>
+    <p class="reveal">Over several days I tried more than ten AI video generation platforms. This is what happened with each one:</p>
+
+    <div class="incident-detail reveal">
+      <p><strong>InVideo AI</strong> — generated decent footage, then download required paid plan to remove watermark. Closed the tab.</p>
+    </div>
+    <div class="incident-detail reveal">
+      <p><strong>Runway ML</strong> — genuinely impressive clips. Free credits ran out after two or three attempts. Pricing was not feasible on zero fellowship.</p>
+    </div>
+    <div class="incident-detail reveal">
+      <p><strong>Pika Labs</strong> — slow and inconsistent access from India. No usable material produced after two days of trying.</p>
+    </div>
+    <div class="incident-detail reveal">
+      <p><strong>Genmo, Pictory, VEED</strong> — output too poor, or watermarked, or paywalled for the features needed.</p>
+    </div>
+    <div class="incident-detail reveal">
+      <p><strong>Open-Sora</strong> — open-source but requires a GPU. Built for research labs, not students with a laptop.</p>
+    </div>
+    <div class="incident-detail reveal">
+      <p><strong>LTX Studio</strong> — waitlisted. Never admitted during the time window for this assignment.</p>
+    </div>
+    <div class="incident-detail reveal">
+      <p><strong>Synthesia, Kling AI</strong> — fully paywalled before anything useful could be done.</p>
+    </div>
+
+    <div class="hand-note reveal">
+      "After all of this: one video clip. Ten seconds. A person at a desk. That was the entire visual output from more than a week of trying and ten different platforms."
+    </div>
+
+    <h3 class="reveal">NotebookLM — The Accidental Discovery</h3>
+    <p class="reveal">I opened NotebookLM because I had run out of other ideas. I uploaded the script and my notes. I expected a summary. What came back was a podcast — two AI voices having a real conversation about my ideas, asking each other about the metaphor, explaining why one scene connected to another.</p>
+    <p class="reveal">I put on my headphones and listened twice.</p>
+    <p class="reveal">These were my ideas. I had written them. But hearing them discussed through a conversation I hadn't controlled, I understood things I had technically written but hadn't fully absorbed. The connection between the map metaphor and self-directed learning — which I had put in the script somewhat intuitively — became precise and clear as I listened to someone else explain why it worked.</p>
+    <p class="reveal">That was the moment in the whole project when actual learning happened. Not when I wrote the script. When I listened to my own thinking coming back to me through a different medium. <em>Listener-centred communication</em>, as a lived experience rather than a theory.</p>
+    <p class="reveal">The failure was the learning. That is anthrogogy.</p>
+  </div>
+</section>
+<div class="tape"></div>
+
+<!-- ══════════════════════════ MOVIE SCENES ══════════════════════════ -->
+<section class="section-warm" id="videos">
+  <div class="container-wide">
+    <span class="sec-label reveal">03 · seen on screen</span>
+    <h2 class="reveal">These films showed it<br>before we had words for it</h2>
+    <p class="reveal" style="max-width:640px;color:#7a6a52;margin-bottom:6px">Hindi cinema and Hollywood both captured pedagogy and anthrogogy long before most classrooms discussed the theory. Eight specific scenes — four showing the problem, four showing the alternative. Click any card to find the scene on YouTube.</p>
+
+    <div style="margin:52px 0 20px">
+      <span style="font-family:'Caveat',cursive;font-size:22px;font-weight:700;color:#8b3a1a;display:block;margin-bottom:4px">❌ Scenes showing Pedagogy — the problem</span>
+      <p style="font-size:15px;color:#9a8a72;margin:0">Rote learning. Grades over understanding. Authority over curiosity. You will recognise every one of these.</p>
+    </div>
+
+    <div class="video-grid">
+
+      <!-- 3 IDIOTS CHATUR -->
+      <div class="video-card reveal d1">
+        <div class="video-frame-wrap">
+          <a href="https://youtu.be/iFkoP8y9648?si=jdfu8DfCuA2l08Vv" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/iFkoP8y9648/hqdefault.jpg" alt="3 Idiots Chatur Speech" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#2a0a0a,#6b1212)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ped">🎬 3 Idiots (2009) · Hindi</span>
+          <div class="video-title">Chatur memorises a speech he doesn't understand</div>
+          <p class="video-desc">Chatur rote-learns an entire Hindi speech without understanding a single word. When the words are secretly changed, he delivers something completely humiliating. The funniest and most precise image of pedagogy ever filmed — performing knowledge you don't actually have.</p>
+        </div>
+      </div>
+
+      <!-- 3 IDIOTS VIRUS -->
+      <div class="video-card reveal d2">
+        <div class="video-frame-wrap">
+          <a href="https://youtube.com/shorts/1TNSCe6W0gU?si=BP7ViTofNdIsMIZt" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/1TNSCe6W0gU/hqdefault.jpg" alt="3 Idiots Virus Pen Scene" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a0a2a,#3a1260)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ped">🎬 3 Idiots (2009) · Hindi</span>
+          <div class="video-title">Virus: fear, rank, and grades as the whole point</div>
+          <p class="video-desc">Virus runs his college entirely on fear of failure and competition for rank. The learner's passion, mental health, or genuine understanding is irrelevant — only the grade matters. Pedagogical authority taken to its most damaging extreme, and one every Indian student immediately recognises.</p>
+        </div>
+      </div>
+
+      <!-- TAARE ZAMEEN PAR ISHAAN FAILS -->
+      <div class="video-card reveal d3">
+        <div class="video-frame-wrap">
+          <a href="https://youtu.be/g8zUjOI1SL4?si=1JjnSFo8ACc7fHyQ" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/g8zUjOI1SL4/hqdefault.jpg" alt="Taare Zameen Par Ishaan Failing" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1a2a,#123060)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ped">🎬 Taare Zameen Par (2007) · Hindi</span>
+          <div class="video-title">Ishaan is failing — and the system never asks why</div>
+          <p class="video-desc">Ishaan is dyslexic, but the classroom only sees a failing student. The teacher delivers the content and marks who keeps up. Nobody asks why Ishaan struggles — the system was not designed to ask that question. This is what pedagogy looks like when a learner doesn't fit the mould.</p>
+        </div>
+      </div>
+
+      <!-- FERRIS BUELLER -->
+      <div class="video-card reveal">
+        <div class="video-frame-wrap">
+          <a href="https://youtu.be/X_wHBlouFSc?si=5vKGMLZ-24KTa1Pz" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/X_wHBlouFSc/hqdefault.jpg" alt="Ferris Bueller Anyone Anyone" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a0a,#4a4a10)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ped">🎬 Ferris Bueller's Day Off (1986) · English</span>
+          <div class="video-title">"Anyone? Anyone?" — The deadest classroom in cinema</div>
+          <p class="video-desc">The economics teacher drones through a monotone lecture while every student slowly dies inside. He asks "Anyone? Anyone?" but is completely indifferent to whether anyone engages. Students are physically present and mentally absent. In 2 minutes this says everything about pedagogy as pure delivery with zero connection.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin:64px 0 20px">
+      <span style="font-family:'Caveat',cursive;font-size:22px;font-weight:700;color:#2a6e4e;display:block;margin-bottom:4px">✅ Scenes showing Anthrogogy — the alternative</span>
+      <p style="font-size:15px;color:#9a8a72;margin:0">Learner at the centre. Understanding over memorisation. Experience as the starting point.</p>
+    </div>
+
+    <div class="video-grid">
+
+      <!-- 3 IDIOTS RANCHO MACHINE -->
+      <div class="video-card reveal d1">
+        <div class="video-frame-wrap">
+          <a href="https://youtu.be/DKzBmRRdPXo?si=KDoTVEyw1CTLfCHu" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/DKzBmRRdPXo/hqdefault.jpg" alt="3 Idiots Rancho Machine Definition" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a2a0a,#126b20)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ant">🎬 3 Idiots (2009) · Hindi</span>
+          <div class="video-title">Rancho explains "machine" — in his own words</div>
+          <p class="video-desc">Asked to define "machine," Rancho doesn't recite the textbook — he explains it in plain language that the whole class instantly understands. The professor punishes him anyway. The most direct cinematic example of anthrogogy: real understanding versus performed memorisation.</p>
+        </div>
+      </div>
+
+      <!-- TAARE ZAMEEN PAR NIKUMBH -->
+      <div class="video-card reveal d2">
+        <div class="video-frame-wrap">
+          <a href="https://youtube.com/shorts/o8TSmrBbgBg?si=mwPogfyZcRp-Hgbk" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/o8TSmrBbgBg/hqdefault.jpg" alt="Pedagogy vs Anthrogogy - Taare Zameen Par" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#0a1e2e,#1a5060)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ant">🎬 Taare Zameen Par (2007) · Hindi</span>
+          <div class="video-title">Nikumbh teaches Ishaan — the anthrogogical teacher</div>
+          <p class="video-desc">Nikumbh doesn't deliver content from the front — he sits beside Ishaan, asks questions, listens, and starts from where Ishaan actually is. He uses Ishaan's own imagination as the entry point. The most beautiful depiction of learner-centred teaching in Hindi cinema.</p>
+        </div>
+      </div>
+
+      <!-- DEAD POETS SOCIETY -->
+      <div class="video-card reveal d3">
+        <div class="video-frame-wrap">
+          <a href="https://youtu.be/j64SctPKmqk?si=IoaUDxlYx-N30PKR" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/j64SctPKmqk/hqdefault.jpg" alt="Dead Poets Society O Captain My Captain" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1228,#3a2860)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ant">🎬 Dead Poets Society (1989) · English</span>
+          <div class="video-title">"O Captain, My Captain" — students choose their own voice</div>
+          <p class="video-desc">Students stand on their desks one by one — not because they were told to, but because they chose to. After a year of Mr. Keating teaching them to think for themselves, this is the result: learners who stand up even when the system pushes back. The most iconic image of self-direction in cinema.</p>
+        </div>
+      </div>
+
+      <!-- 12TH FAIL -->
+      <div class="video-card reveal">
+        <div class="video-frame-wrap">
+          <a href="https://youtube.com/shorts/V8BSsZj3bkY?si=Qof9A_Ot3HOq3xdA" target="_blank" rel="noopener" style="display:block;position:absolute;inset:0;text-decoration:none;">
+            <img src="https://img.youtube.com/vi/V8BSsZj3bkY/hqdefault.jpg" alt="12th Fail Manoj Kumar Self Study" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#1e1008,#5a3010)'">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.35);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+              <div style="width:68px;height:68px;background:#ff0000;border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.4);">
+                <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;margin-left:4px"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span style="font-family:Caveat,cursive;font-size:16px;font-weight:600;color:#fff;margin-top:12px;text-align:center;padding:0 16px;text-shadow:0 1px 4px rgba(0,0,0,0.8);">Watch on YouTube</span>
+            </div>
+          </a>
+        </div>
+        <div class="video-info">
+          <span class="video-tag tag-ant">🎬 12th Fail (2023) · Hindi</span>
+          <div class="video-title">Manoj Kumar Sharma — pure self-directed learning</div>
+          <p class="video-desc">No coaching, no expensive books, no privileged background. Manoj teaches himself to clear the UPSC driven entirely by internal motivation. No teacher handed him the map. He drew it himself. This is the spirit of anthrogogy in a real Indian story.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</section>
+<div class="tape"></div>
+
+<!-- ══════════════════════════ COMPARE TABLE ══════════════════════════ -->
+<section class="section-cream" id="compare">
+  <div class="container-wide">
+    <span class="sec-label reveal">04 · the contrast</span>
+    <h2 class="reveal">Pedagogy vs Anthrogogy —<br>side by side</h2>
+    <p class="reveal" style="max-width:600px;color:#7a6a52">Not as abstract definitions. As a description of two completely different relationships between a person and their own learning.</p>
+
+    <div class="compare-wrap reveal">
+      <div class="compare-col col-ped">
+        <span class="compare-label">❌ Pedagogy</span>
+        <h3>Teacher at the centre</h3>
+        <div class="compare-row">The teacher holds all knowledge. The learner receives it.</div>
+        <div class="compare-row">Curriculum set by someone other than the learner.</div>
+        <div class="compare-row">Destination decided in advance. Learner just moves toward it.</div>
+        <div class="compare-row">Success = reproducing what was given, accurately.</div>
+        <div class="compare-row">Learner's own experience is a distraction, not a resource.</div>
+        <div class="compare-row">Questions must stay inside the syllabus boundary.</div>
+        <div class="compare-row">Motivation comes from outside: grades, fear of failure.</div>
+        <div class="compare-row">Learning ends when the exam is over.</div>
+      </div>
+      <div class="compare-col col-ant">
+        <span class="compare-label">✅ Anthrogogy</span>
+        <h3>Learner at the centre</h3>
+        <div class="compare-row">The learner's own experience is the primary resource.</div>
+        <div class="compare-row">Curriculum emerges from the learner's own questions.</div>
+        <div class="compare-row">No fixed destination. Learning is self-directed.</div>
+        <div class="compare-row">Success = real development of understanding and capacity.</div>
+        <div class="compare-row">Experience is not a distraction — it is the content.</div>
+        <div class="compare-row">Questions are not interruptions. They are the plan.</div>
+        <div class="compare-row">Motivation is internal: genuine curiosity, real need to know.</div>
+        <div class="compare-row">Learning continues long after any formal assessment.</div>
+      </div>
+    </div>
+
+    <div class="hand-note reveal">
+      "This course — the way Prof. Shree Deepa teaches it — is one of the only times in my academic life I have been in a room where the second column felt like it was actually true."
+    </div>
+
+    <p class="reveal">Anthrogogy is not just a better teaching theory. It is a description of what adult human beings actually need in order to grow. The fact that most of our education was designed around the opposite model is not a minor inconvenience. It is the problem this entire project is trying to name.</p>
+  </div>
+</section>
+<div class="tape"></div>
+
+<!-- ══════════════════════════ STORY ONE ══════════════════════════ -->
+<section class="section-white" id="story1">
+  <div class="story-header">
+    <span class="sec-label reveal">05 · fiction · story one</span>
+    <span class="story-num reveal">1</span>
+    <h2 class="story-title reveal">The Syllabus<br>of Survival</h2>
+    <p class="story-byline reveal">A story about adulthood, and learning what no school ever teaches.</p>
+  </div>
+  <div class="story-body">
+    <p class="story-opener reveal">Danish graduated on a Thursday in June, and the first thing he felt was not what he had expected.</p>
+
+    <p class="reveal">He had imagined it would feel like arrival — the way the end of a long journey feels when you finally stop and realise you are somewhere. He had worked toward this for four years. He had studied, appeared, passed. He had been awarded a First Class and his name had appeared on the list and someone standing near him in the canteen had said: so you made it. He had nodded. He had gone home.</p>
+
+    <p class="reveal">The days that followed felt strange. They were not empty exactly. He was reading, thinking, going out. But something was missing. There had always been a next thing — a next paper, a next semester, a next examination. The plan had been explicit even when never stated explicitly: study, progress, qualify, emerge at the other end with something that proved the studying had happened. This had organised his life since he was old enough to hold a pencil. And now he had arrived at the end of it.</p>
+
+    <p class="reveal">The problem was that arriving at the end of the plan was not the same as arriving somewhere. The plan had a destination. The destination, it turned out, was not a place. It was a credential. And a credential was not a life.</p>
+
+    <p class="reveal">He tried asking people. He asked his father, who said stability first, everything else follows. He asked his cousin in Hyderabad, who said stability is overrated and passion runs out when you spend it on something you don't believe in. He asked a former professor, who said go deep in a narrow area. He found a blog post that said the professor's advice was outdated. Every voice was confident. Every voice disagreed. And none of them were answering his actual question.</p>
+
+    <p class="reveal">The question was: how do I know what I want? Not what is strategically optimal. What do I actually want?</p>
+
+    <p class="reveal">He had never been taught how to answer that. He was twenty-two and he was only now realising that he had never been asked it seriously before. School had not asked. It had measured capability and sorted him accordingly. Family had not asked. It had already decided what was good for him. The examination system had not asked. It had wanted accurate reproduction of prescribed content.</p>
+
+    <p class="reveal">He had spent twenty-two years being asked to perform various kinds of competence. Not one moment of it had been spent teaching him to ask what the competence was for.</p>
+
+    <p class="reveal">He started a notebook. Not strategically. He just began writing things down because some days writing them down was the only thing that made them feel real. He wrote observations. Questions he didn't have answers to yet. Things he had done in the past year that had felt genuinely interesting — not because they seemed like the right things to be doing, but because they actually were, to him.</p>
+
+    <p class="reveal">One afternoon, sitting in the university library, he wrote a line that stopped him when he read it back:</p>
+
+    <div class="hand-note reveal">I have spent my whole life learning to read maps that other people drew. Nobody ever taught me how to draw one.
+    </div>
+
+    <p class="reveal">He put the pen down. He looked out the window at the campus, at the students moving between buildings, all of them carrying their own versions of the plan, most of them not yet at the edge of it.</p>
+
+    <p class="reveal">He did not know how to draw the map yet. He was not sure he would get it right the first time, or the second, or the tenth. But he understood something he had not understood before: the drawing was his responsibility. It had always been his responsibility. And the fact that no one had told him this earlier was not kindness. It was the structural consequence of an education that had prepared him for everything except the thing that adulthood actually required.</p>
+
+    <p class="reveal">He picked up the pen. He turned to the next blank page. He started writing.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════ STORY TWO ══════════════════════════ -->
+<section class="section-dark" id="story2">
+  <div class="story-header">
+    <span class="sec-label reveal">06 · fiction · story two</span>
+    <span class="story-num reveal">2</span>
+    <h2 class="story-title reveal" style="color:#f0e9da">The Map That Was<br><em style="color:#e8b86d">Never Given</em></h2>
+    <p class="story-byline reveal">A story about making something when everything you need is behind a paywall — and what you find instead.</p>
+  </div>
+  <div class="story-body">
+    <p class="story-opener reveal">Danish got the assignment on a Tuesday and felt something he hadn't felt about a course task in a long time: genuine excitement.</p>
+
+    <p class="reveal">The question was open. No format. No example. No rubric telling him which boxes to check. Just a concept that had been growing in his mind all semester, and an invitation to do something with it.</p>
+
+    <p class="reveal">The idea came that evening. A map. A printed map, the kind someone else had drawn and packaged and handed to you — representing pedagogy: here is the territory, already interpreted, already structured. You don't need to understand it. You need to navigate it. And then a hand-drawn map — imperfect, full of corrections and question marks — representing the learner who was figuring the territory out for themselves.</p>
+
+    <p class="reveal">He wrote the script that night. Eight scenes. Narration for each. He read it back and it felt right. It was the best thing he had written in a while. He started looking for AI video tools the next morning.</p>
+
+    <p class="reveal">The first platform was polished and professional-looking. He spent an hour crafting prompts. The output was actually good. He clicked download and found a watermark spanning the entire frame. Removing it required a paid subscription. He closed the tab.</p>
+
+    <p class="reveal">He tried a second, and a third, and a fourth. He tried one that required a GPU he didn't have. He tried one that put him on a waitlist he was never let off. He tried one that gave him exactly ten seconds of video before stopping entirely, which at that point felt almost like a joke.</p>
+
+    <p class="reveal">On the third day he sat back from his laptop and thought: this is a specific kind of problem. Not a problem of skill. Not of vision or effort. A problem of money. All these tools exist. All of them would produce what he needed. All of them were behind a barrier that had nothing to do with his readiness to use them and everything to do with whether he could pay.</p>
+
+    <p class="reveal">He had a script. He had narration audio. He had a concept he believed in. And he had one ten-second clip. He needed to figure out what to do with that situation.</p>
+
+    <p class="reveal">He opened NotebookLM mostly because he had run out of other ideas. He uploaded the script and his notes. He pressed the button that generated a podcast. He'd heard this feature existed. He had not expected much.</p>
+
+    <p class="reveal">The podcast began. Two AI voices talking about his script. About the map metaphor. One said: <em style="color:#e8b86d">what's interesting is that the printed map isn't wrong, it's just someone else's map. The problem is you're trying to use it to navigate your own life.</em> The other said: <em style="color:#e8b86d">right, and the hand-drawn map isn't better in any objective sense. It's messier. But it's yours. You made it by actually moving through the territory.</em></p>
+
+    <p class="reveal">Danish sat very still.</p>
+
+    <p class="reveal">He had written those ideas. They were in the script. But hearing them said out loud, by two voices negotiating meaning between themselves, he understood them differently. More precisely. He had known what he meant when he wrote it. He had not quite known what it meant.</p>
+
+    <p class="reveal">He listened twice. The second time through he had his notebook open and was writing things down — not because the voices were saying new things, but because hearing his own ideas reflected through a different medium made him see things he hadn't seen before. It felt like the course idea of listener-centred communication becoming real — the meaning he received was different from the meaning he had sent.</p>
+
+    <div class="hand-note reveal">
+      I came in looking for software to make a film and I found something more interesting. I found the thing the film was trying to be about.
+    </div>
+
+    <p class="reveal">He built the presentation. Wrote the report. Included the ten-second clip as evidence of the attempt. He did not pretend the film had been made.</p>
+
+    <p class="reveal">What he had instead of the film was something that could not have been planned and could not have been produced by following instructions: a real encounter with the ideas he had been trying to make a film about. The failure had generated the learning. That was not the plan.</p>
+
+    <p class="reveal">But it was better than the plan.</p>
+  </div>
+</section>
+<div class="tape"></div>
+
+<!-- ══════════════════════════ CLOSING ══════════════════════════ -->
+<section id="closing">
+  <div class="closing-line reveal">
+    The map was never meant<br>to be given.<br>
+    <em>It was always meant to be created.</em>
+  </div>
+  <p class="closing-sig reveal">
+    Mohd Shoaib &nbsp;·&nbsp; 24MNMS13<br>
+    M.Sc. Neural and Cognitive Sciences, 3rd Semester<br>
+    University of Hyderabad &nbsp;·&nbsp; Anthrogogy &nbsp;·&nbsp; Prof. Shree Deepa &nbsp;·&nbsp; 2026
+  </p>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
